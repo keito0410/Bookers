@@ -27,11 +27,17 @@
   <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+    <% if @book.errors.messages[:title].any? %>
+    <span class="error"><%= @book.errors.messages[:title][0] %></span>
+    <% end %>
   </div>
 
   <div class="field">
     <%= f.label :body %><br>
     <%= f.text_area :body %>
+    <% if @book.errors.messages[:body].any? %>
+    <span class="error"><%= @book.errors.messages[:body][0] %></span>
+    <% end %>
   </div>
 
   <div class="actions">
